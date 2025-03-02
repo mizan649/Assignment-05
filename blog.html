@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog the Dev Board</title>
+    <!-- Daisy apa -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+    </style>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/main.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        bgColor: '#F4F7FF',
+                        textColor: '#00303C',
+                        // textColor: '#CB2E81',
+                        btnBg: '#3752FD',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-bgColor poppins-regular">
+    <header>
+        <nav
+            class=" max-w-screen-2xl mx-auto flex justify-between bg-white md:px-6 py-5 rounded-xl md:rounded-2xl relative top-6">
+            <div class="flex gap-3 items-center">
+                <img class="" src="./assets/logo.png" alt="logo the dev board">
+                <h2 class="text-textColor text-xl md:text-4xl"><span class="font-light">Dev</span> <span
+                        class="font-bold">Board</span></h2>
+            </div>
+            <!-- Right side -->
+            <section class="flex gap-8 items-center">
+                <button id="backToDesk" class="btn bg-btnBg hover:bg-btnBg/50 text-white font-medium text-xl">Back to Desk</button>
+                <div id="theme-toggole" class="bg-bgColor p-3 rounded-full cursor-pointer">
+                    <img class="w-full" src="./assets/theme-btn.png" alt="Change the on click this button">
+                </div>
+            </section>
+        </nav>
+    </header>
+    <main class="max-w-screen-2xl mx-auto mt-12">
+        <section class="space-y-8 my-7">
+            <div class="bg-white rounded-lg px-4 py-5">
+                <h1 class="font-bold text-xl pb-5">Question-1: What are the different ways to select an element in the DOM?</h1>
+                <p class="pt-5 border-t-4 border-dashed border-bgColor text-textColor">
+                    <span class="text-purple-500">Answer:</span><br>There are severel methods,  Like: 
+                    <li>document.getElementsByTagName("div");</li>
+                    <li>document.querySelector(".myClass");</li>
+                    <li>document.querySelectorAll(".myClass");</li>
+                </p>
+            </div>
+            <!-- Card 2 -->
+             <div class="bg-white rounded-lg px-4 py-5">
+                <h1 class="font-bold text-xl pb-5">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
+                <p class="pt-5 border-t-4 border-dashed border-bgColor text-textColor">
+                    <span class="text-purple-500">Answer:</span><br>These three properties are used 
+                    <li>innerHTML</li>
+                    <li>innerText</li>
+                    <li>InnerContent</li>
+                </p>
+             </div>
+             <!-- Card 3 -->
+              <div class="bg-white rounded-lg px-4 py-5">
+                <h1 class="font-bold text-xl pb-5">Question-3: What is event delegation in the DOM?</h1>
+                <p class="pt-5 border-t-4 border-dashed border-bgColor text-textColor">
+                    <span class="text-purple-500">Answer:</span><br>Event Delegation is a techinique in JavaScript whre you delegate the responsibility of handling events to a parents Elements, Rather than attching event listener to individual child elements.</p>
+              </div>
+              <!-- Card 4 -->
+               <div class="bg-white rounded-lg px-4 py-5">
+                <h1 class="font-bold text-xl pb-5">Question-4: What is event bubbling in the DOM?</h1>
+                <p class="pt-5 border-t-4 border-dashed border-bgColor text-textColor">
+                    <span class="text-purple-500">Answer:</span><br>Event Bubbling is a mechanism in the DOM. Where an event trigered a specific element propagate upward through its ancestor elements in the DOM tree.</p>
+               </div>
+               <!-- Card 5 -->
+                <div class="bg-white rounded-lg px-4 py-5">
+                    <h1 class="font-bold text-xl pb-5">Question-5: How do you create, add, and remove elements using JavaScript?</h1>
+                    <p class="pt-5 border-t-4 border-dashed border-bgColor text-textColor">
+                        <span class="text-purple-500">Answer:</span><br>
+                        <li>Creating Element: To create a new element, use the document.createElement() method.</li>
+                        <li>Addings Elements: Once an element is create, you can add it the dom using appendChild() method on the last as single, and append() method can add multiples Node an html element.</li>
+                        <li>Remove the element: You can remove the HTML child element uding removeChild() method.</li>
+                    </p>
+                </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById("backToDesk").addEventListener("click", function(){
+            window.location.href = "/index.html"; 
+        }); 
+        document.getElementById("theme-toggole").addEventListener('click', function () {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+
+                const bgColor = `rgb(${r}, ${g}, ${b})`;
+                document.body.style.background = bgColor;
+                document.getElementById("task-bar").style.borderColor = bgColor;
+            })
+    </script>
+</body>
+
+</html>
